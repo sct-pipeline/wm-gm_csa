@@ -24,7 +24,7 @@ for folder in ${list_folders[@]}; do
     # check if exist
     if [ -f "$FILE_WM" ]; then
       echo HAPPY
-      # sct_process_segmentation -i $FILE_WM -p csa -ofolder $PATH_MAIN
+      sct_process_segmentation -i $FILE_WM -p csa -ofolder $PATH_MAIN -z 0:100
     else
       echo SAD
     fi
