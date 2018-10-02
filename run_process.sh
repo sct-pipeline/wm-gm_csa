@@ -11,7 +11,7 @@
 #   ./run_process.sh extract_metrics.sh /Users/julien/data/spine_generic/
 #
 # Add the flag "-x" after "!/bin/bash" for full verbose of commands.
-# Julien Cohen-Adad 2018-07-20
+# Francois Paugam 2018-09-23
 
 # Exit if user presses CTRL+C (Linux) or CMD+C (OSX)
 trap "echo Caught Keyboard Interrupt within script. Exiting now.; exit" INT
@@ -28,7 +28,7 @@ trap "echo Caught Keyboard Interrupt within script. Exiting now.; exit" INT
 # Build color coding (cosmetic stuff)
 Color_Off='\033[0m'       # Text Reset
 Green='\033[0;92m'       # Green
-Red='\033[0;91m'  # Red
+Red='\033[0;91m'      # Red
 On_Black='\033[40m'       # Black
 
 # Load config file
@@ -41,6 +41,7 @@ fi
 
 # Build syntax for process execution
 CMD=`pwd`/$1
+export PATH_SCRIPTS=`pwd`
 
 # Go to path data folder that encloses all subjects' folders
 cd ${PATH_DATA}
