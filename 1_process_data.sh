@@ -25,11 +25,10 @@ for folder in ${list_folders[@]}; do
     for im in $( ls ); do
       # if wm segmentation identified
       if [[ $im == *"$TAG_FILE_GM"* ]]; then
-        echo "Processing GM file : $folder$subfolder$im"
+        printf "${Green}${On_Black} Processing GM file : $folder$subfolder$im"
         sct_process_segmentation -i $im -p csa -ofolder $PATH_MAIN -z 0:100
       elif [[ $im == *"$TAG_FILE_WM"* ]]; then
-        echo " "
-        echo "Processing WM file : $folder$subfolder$im"
+        printf "${Green}${On_Black}Processing WM file : $folder$subfolder$im"
         sct_process_segmentation -i $im -p csa -ofolder $PATH_MAIN -z 0:100
       fi
     done
@@ -40,4 +39,4 @@ done
 
 source sct_launcher
 python $PATH_SCRIPTS/make_output_files.py "$PATH_MAIN/csa_mean.xls"
-rm $PATH_MAIN/angle_image.nii.gz $PATH_MAIN/angle_mean.pickle $PATH_MAIN/angle_mean.txt $PATH_MAIN/angle_mean.xls $PATH_MAIN/csa_image.nii.gz $PATH_MAIN/csa_mean.pickle $PATH_MAIN/csa_mean.txt $PATH_MAIN/csa_mean.xls $PATH_MAIN/csa_per_slice.pickle $PATH_MAIN/csa_per_slice.txt
+rm "$PATH_MAIN/angle_image.nii.gz" "$PATH_MAIN/angle_mean.pickle" "$PATH_MAIN/angle_mean.txt" "$PATH_MAIN/angle_mean.xls" "$PATH_MAIN/csa_image.nii.gz" "$PATH_MAIN/csa_mean.pickle" "$PATH_MAIN/csa_mean.txt" "$PATH_MAIN/csa_mean.xls" "$PATH_MAIN/csa_per_slice.pickle" "$PATH_MAIN/csa_per_slice.txt"

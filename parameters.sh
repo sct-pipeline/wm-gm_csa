@@ -13,9 +13,9 @@ export PATH_DATA="/Users/francois/Documents/Neuropoly/marmoset_data"
 # List of subjects to analyse. If you want to analyze all subjects in the
 # PATH_DATA folder, then comment this variable.
 export SUBJECTS=(
-	#"Eva"
+	"eva"
 	"gretel"
-	#"luisa"
+	"luisa"
 	)
 
 # tag used to identify WM files, it must be included in all and only in WM file names
